@@ -1,0 +1,8 @@
+{
+  "AppCenterDroidConnectionString": "08457f86-c937-4bcd-9564-87cdb16f9e59",
+  "AppCenterIOSConnectionString": "c05a6796-e30c-4f15-a3ad-fe36c05a2933",
+  "AndroidNotificationChannelName": "ConsumerAppDroidPNChannel",
+  "AndroidNotificationChannelId": "1002",
+  "BackendUrl": "https://www.novaclean.com.ar/api/"
+
+}

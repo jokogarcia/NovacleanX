@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rgPopUp:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:prism="http://prismlibrary.com"
+                   prism:ViewModelLocator.AutowireViewModel="True"
+                   xmlns:rgPopUp="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                   xmlns:rgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                   CloseWhenBackgroundIsClicked="false"
+                   x:Class="NovacleanX.Views.SimpleModalPage"
+                   AutomationId="SimpleModalPopupPage">
+    <rgPopUp:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="IntermexModalHeader"  TargetType="{x:Type StackLayout}">
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <Style x:Key="IntermexModalTitleText"  TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="Montserrat" />
+            </Style>
+
+            <Style x:Key="IntermexModalBodyContainer"  TargetType="{x:Type StackLayout}">
+                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <Style x:Key="IntermexModalFooter" TargetType="{x:Type StackLayout}">
+                <Setter Property="BackgroundColor" Value="#1c313a"/>
+                <Setter Property="Padding" Value="20, 15" />
+            </Style>
+            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="25,0" x:Key="ModalButtonPadding"/>
+
+            <Style x:Key="IntermexModalFooterButton"  TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="FontFamily" Value="Montserrat" />
+                <Setter Property="Padding" Value="{StaticResource ModalButtonPadding}"/>
+            </Style>
+
+            <Style x:Key="IntermexModalFooterOkButton"  TargetType="{x:Type Button}" 
+                   BasedOn="{StaticResource IntermexModalFooterButton}">
+                <Setter Property="TextColor" Value="#1c313a"/>
+                <Setter Property="BackgroundColor" Value="#dcf156"/>
+            </Style>
+
+            <Style x:Key="IntermexModalFooterCancelButton"  TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource IntermexModalFooterButton}">
+                <Setter Property="TextColor" Value="#ffffff"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </rgPopUp:PopupPage.Resources>
+
+    <rgPopUp:PopupPage.Animation>
+        <rgAnimations:ScaleAnimation PositionIn="Center" PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8"
+                                     DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn"
+                                     HasBackgroundAnimation="True" />
+    </rgPopUp:PopupPage.Animation>
+    <rgPopUp:PopupPage.Content>
+        <Grid Padding="20" Margin="30, 0, 30, 0"
+              RowSpacing="0" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0"
+                         Style="{StaticResource IntermexModalHeader}"
+                         BackgroundColor="{Binding ModalHeaderColor}">
+                <Label Text="{Binding ModalTitle}"
+                       Style="{StaticResource IntermexModalTitleText}"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1"
+                         Style="{StaticResource IntermexModalBodyContainer}">
+                <Label Text="{Binding Message}"
+                       FontSize="14"
+                       TextColor="Black"
+                       FontFamily="Montserrat"
+                       LineBreakMode="WordWrap" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2"
+                         Style="{StaticResource IntermexModalFooter}">
+                <StackLayout HorizontalOptions="EndAndExpand"
+                             Orientation="Horizontal">
+                    <Button Command="{Binding CancelButtonCommand}"
+                            Text="{Binding CancelButtonText}"
+                            IsVisible="{Binding ShowCancelButton}"
+                            Style="{StaticResource IntermexModalFooterCancelButton}"
+                            AutomationId="ButtonCancelModal"/>
+
+                    <Button Command="{Binding OkButtonCommand}"
+                            Text="{Binding OkButtonText}"
+                            IsVisible="{Binding ShowOkButton}"
+                            Style="{StaticResource IntermexModalFooterOkButton}"
+                            Margin="10, 0, 0, 0"
+                            AutomationId="ButtonOkModal"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </rgPopUp:PopupPage.Content>
+</rgPopUp:PopupPage>

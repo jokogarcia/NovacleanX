@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:NovacleanX.Resources"
+             x:Class="NovacleanX.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="{x:Static resource:AppResources.WelcomeText}" />
+        <Entry Visual="Material" Placeholder="{x:Static resource:AppResources.Login_Email}" ReturnType="Next" Keyboard="Email"
+               Text="{Binding LoginEmail}"/>
+        <Entry Visual="Material" Placeholder="{x:Static resource:AppResources.Login_Password}" ReturnType="Go" IsPassword="True" ReturnCommand="{Binding LoginCommand}" 
+               Text="{Binding LoginPassword}"/>
+        <Button Command="{Binding LoginCommand}" Text="{x:Static resource:AppResources.Login_Login}"/>
+    </StackLayout>
+
+</ContentPage>

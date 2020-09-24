@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "978223800921",
+    "firebase_url": "https://novaclean2020-83f71.firebaseio.com",
+    "project_id": "novaclean2020-83f71",
+    "storage_bucket": "novaclean2020-83f71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978223800921:android:3049e90a41cdda89728748",
+        "android_client_info": {
+          "package_name": "ar.com.novaclean.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978223800921-ogadmiv2kfdan57k3cc1vlminuj3m4i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6GrEJEjjStLRUXYqrzen5Vunxu5-EhOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978223800921-ogadmiv2kfdan57k3cc1vlminuj3m4i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
